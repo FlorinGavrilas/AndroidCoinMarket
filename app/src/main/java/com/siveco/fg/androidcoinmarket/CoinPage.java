@@ -7,6 +7,7 @@ import java.util.Date;
 import java.util.Locale;
 import java.util.TimeZone;
 import android.os.Bundle;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
@@ -37,6 +38,11 @@ public class CoinPage extends AppCompatActivity {
         TextView change1h = findViewById(R.id.change1h);
         TextView change24h = findViewById(R.id.change24h);
         TextView change7d = findViewById(R.id.change7d);
+
+        //Back Button
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setTitle((CharSequence) datum.getName());
+        //end back button
 
         name.setText(datum.getName() + " (" + datum.getSymbol() + ")");
         price.setText("Price: $" + String.format("%,f", datum.getQuote().getUSD().getPrice()));
