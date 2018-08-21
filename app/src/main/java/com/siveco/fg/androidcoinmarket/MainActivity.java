@@ -60,6 +60,8 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(MainActivity.this, CoinPage.class);
                 intent.putExtra("coin", adapter.getItem(position));
                 startActivity(intent);
+                //animation
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
             }
         });
     }
